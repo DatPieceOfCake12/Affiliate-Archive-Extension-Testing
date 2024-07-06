@@ -6,13 +6,9 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": "briefcase.png"
-  }
-  "content_scripts": [
-    {
-      "js": ["scripts/content.js"],
-      "matches": [
-        "https://nordvpn.com/*"
-      ]
-    }
-  ]
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting","tabs"]
 }
