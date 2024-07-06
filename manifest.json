@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Affiliate Archive",
+  "description": "Save money and support your local creators by using their codes",
+  "version": "0.1",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "briefcase.png"
+  }
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": [
+        "https://nordvpn.com/*"
+      ]
+    }
+  ]
+}
