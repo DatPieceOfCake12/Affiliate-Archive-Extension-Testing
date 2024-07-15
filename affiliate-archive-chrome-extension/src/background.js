@@ -1,3 +1,5 @@
+import scriptPath from "./content.jsx?script";
+
 var urls = [];
 chrome.runtime.onStartup.addListener(function () {
   fetch(chrome.runtime.getURL("urls.txt"))
@@ -44,8 +46,9 @@ function checkUrl(url, id) {
       console.log("Match found for url:", url);
       chrome.scripting.executeScript({
         target: { tabId: id },
-        files: ["scripts/popup.js"],
+        files: [scriptPath],
       });
+      console.log("Script injected");
       break;
     } else {
       console.log("No match found");
